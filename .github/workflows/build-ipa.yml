@@ -24,15 +24,13 @@ jobs:
           xcode-version: latest-stable
 
       - name: Update exportOptions.plist
+        if: "${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
         run: |
           TEAM_ID="${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
-          if [ -z "$TEAM_ID" ]; then
-            echo "Error: Apple Team ID not provided and not set in secrets"
-            exit 1
-          fi
           sed -i '' "s/YOUR_TEAM_ID/$TEAM_ID/g" exportOptions.plist
 
       - name: Build IPA
+        if: "${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
         run: |
           chmod +x build-ipa.sh
           ./build-ipa.sh
@@ -40,6 +38,7 @@ jobs:
           APPLE_TEAM_ID: ${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}
 
       - name: Upload IPA as artifact
+        if: success() && hashFiles('build/ChigurApp.ipa') != ''
         uses: actions/upload-artifact@v4
         with:
           name: ChigurApp.ipa
@@ -47,7 +46,7 @@ jobs:
           retention-days: 30
 
       - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && hashFiles('build/ChigurApp.ipa') != ''
         uses: softprops/action-gh-release@v1
         with:
           files: build/ChigurApp.ipa
