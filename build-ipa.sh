@@ -24,6 +24,8 @@ cat > "$EXPORT_OPTIONS_PLIST" <<'EOF'
     <string>automatic</string>
     <key>stripSwiftSymbols</key>
     <true/>
+    <key>teamID</key>
+    <string></string>
 </dict>
 </plist>
 EOF
@@ -35,6 +37,8 @@ xcodebuild -project "$PROJECT_DIR/ChigurApp.xcodeproj" \
   -archivePath "$ARCHIVE_PATH" \
   -destination 'generic/platform=iOS' \
   -allowProvisioningUpdates \
+  CODE_SIGN_IDENTITY="" \
+  CODE_SIGNING_REQUIRED=NO \
   archive
 
 echo "Exporting IPA..."
