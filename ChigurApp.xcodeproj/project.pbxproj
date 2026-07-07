@@ -7,89 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-	A10000000000000000000001 /* ChigurApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* ChigurApp.swift */; };
-	A10000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000004 /* ContentView.swift */; };
-	A10000000000000000000005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000006 /* LaunchScreen.storyboard */; };
+	1A0000000000000000000001 /* ChigurApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000000000000000000002 /* ChigurApp.swift */; };
+	1A0000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0000000000000000000004 /* ContentView.swift */; };
+	1A0000000000000000000005 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A0000000000000000000006 /* Info.plist */; };
+	1A0000000000000000000007 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0000000000000000000008 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-	A10000000000000000000002 /* ChigurApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChigurApp.swift; sourceTree = "<group>"; };
-	A10000000000000000000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-	A10000000000000000000006 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-	A10000000000000000000007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-	A10000000000000000000008 /* ChigurApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChigurApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+	1A0000000000000000000002 /* ChigurApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChigurApp.swift; sourceTree = "<group>"; };
+	1A0000000000000000000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+	1A0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	1A0000000000000000000009 /* ChigurApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChigurApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+	1A0000000000000000000008 /* WebKit.framework */ = {isa = PBXFrameworkReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-	A10000000000000000000009 /* Frameworks */ = {
+	1A000000000000000000000A /* Frameworks */ = {
 		isa = PBXFrameworksBuildPhase;
 		buildActionMask = 2147483647;
 		files = (
+			1A0000000000000000000007 /* WebKit.framework in Frameworks */,
 		);
 		runOnlyForDeploymentPostprocessing = 0;
 	};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-	A1000000000000000000000A /* ChigurApp */ = {
+	1A000000000000000000000B /* ChigurApp */ = {
 		isa = PBXGroup;
 		children = (
-			A10000000000000000000002,
-			A10000000000000000000004,
-			A10000000000000000000006,
-			A10000000000000000000007,
+			1A0000000000000000000002,
+			1A0000000000000000000004,
+			1A0000000000000000000006,
 		);
 		path = ChigurApp;
 		sourceTree = "<group>";
 	};
-	A1000000000000000000000B /* Products */ = {
+	1A000000000000000000000C /* Products */ = {
 		isa = PBXGroup;
 		children = (
-			A10000000000000000000008,
+			1A0000000000000000000009,
 		);
 		sourceTree = "<group>";
 	};
-	A1000000000000000000000C /* Project */ = {
+	1A000000000000000000000D /* Frameworks */ = {
 		isa = PBXGroup;
 		children = (
-			A1000000000000000000000A,
-			A1000000000000000000000B,
+			1A0000000000000000000008,
+		);
+		name = Frameworks;
+		sourceTree = "<group>";
+	};
+	1A000000000000000000000E /* Project */ = {
+		isa = PBXGroup;
+		children = (
+			1A000000000000000000000B,
+			1A000000000000000000000C,
+			1A000000000000000000000D,
 		);
 		sourceTree = "<group>";
 	};
 /* End PBXGroup section */
 
 /* Begin PBXResourcesBuildPhase section */
-	A1000000000000000000000D /* Resources */ = {
+	1A000000000000000000000F /* Resources */ = {
 		isa = PBXResourcesBuildPhase;
 		buildActionMask = 2147483647;
 		files = (
-			A10000000000000000000005,
+			1A0000000000000000000005 /* Info.plist in Resources */,
 		);
 		runOnlyForDeploymentPostprocessing = 0;
 	};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-	A1000000000000000000000E /* Sources */ = {
+	1A0000000000000000000010 /* Sources */ = {
 		isa = PBXSourcesBuildPhase;
 		buildActionMask = 2147483647;
 		files = (
-			A10000000000000000000001,
-			A10000000000000000000003,
+			1A0000000000000000000001 /* ChigurApp.swift in Sources */,
+			1A0000000000000000000003 /* ContentView.swift in Sources */,
 		);
 		runOnlyForDeploymentPostprocessing = 0;
 	};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-	A1000000000000000000000F /* ChigurApp */ = {
+	1A0000000000000000000011 /* ChigurApp */ = {
 		isa = PBXNativeTarget;
-		buildConfigurationList = A10000000000000000000013 /* Build configuration list for PBXNativeTarget "ChigurApp" */;
+		buildConfigurationList = 1A0000000000000000000015 /* Build configuration list for PBXNativeTarget "ChigurApp" */;
 		buildPhases = (
-			A1000000000000000000000E,
-			A1000000000000000000000D,
-			A10000000000000000000009,
+			1A0000000000000000000010,
+			1A000000000000000000000F,
+			1A000000000000000000000A,
 		);
 		buildRules = (
 		);
@@ -97,96 +107,98 @@
 		);
 		name = ChigurApp;
 		productName = ChigurApp;
-		productReference = A10000000000000000000008;
+		productReference = 1A0000000000000000000009;
 		productType = "com.apple.product-type.application";
 	};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-	A10000000000000000000010 /* Project object */ = {
+	1A0000000000000000000012 /* Project object */ = {
 		isa = PBXProject;
 		attributes = {
 			LastSwiftUpdateCheck = 1600;
 			LastUpgradeCheck = 1600;
 			TargetAttributes = {
-				A1000000000000000000000F = {
+				1A0000000000000000000011 = {
 					CreatedOnToolsVersion = 16.0;
 				};
 			};
 		};
-		buildConfigurationList = A10000000000000000000014 /* Build configuration list for PBXProject "ChigurApp" */;
+		buildConfigurationList = 1A0000000000000000000016 /* Build configuration list for PBXProject "ChigurApp" */;
 		compatibilityVersion = "Xcode 14.0";
 		developmentRegion = en;
 		hasScannedForEncodings = 0;
 		knownRegions = (
 			en,
 		);
-		mainGroup = A1000000000000000000000C;
+		mainGroup = 1A000000000000000000000E;
 		projectDirPath = "";
 		projectRoot = "";
 		targets = (
-			A1000000000000000000000F,
+			1A0000000000000000000011,
 		);
 	};
 /* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
-	A10000000000000000000011 /* Debug */ = {
+	1A0000000000000000000013 /* Debug */ = {
 		isa = XCBuildConfiguration;
 		buildSettings = {
-			ASSETCATALOG_COMPILER_APPICON_NAME = "";
 			CLANG_ENABLE_MODULES = YES;
 			CODE_SIGN_STYLE = Automatic;
 			CURRENT_PROJECT_VERSION = 1;
 			GENERATE_INFOPLIST_FILE = NO;
 			INFOPLIST_FILE = ChigurApp/Info.plist;
-			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 			PRODUCT_BUNDLE_IDENTIFIER = "com.example.chigur";
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			SWIFT_VERSION = 5.9;
 			TARGETED_DEVICE_FAMILY = 1;
+			SKIP_INSTALL = NO;
+			SDK = iphoneos;
 		};
 		name = Debug;
 	};
-	A10000000000000000000012 /* Release */ = {
+	1A0000000000000000000014 /* Release */ = {
 		isa = XCBuildConfiguration;
 		buildSettings = {
-			ASSETCATALOG_COMPILER_APPICON_NAME = "";
 			CLANG_ENABLE_MODULES = YES;
 			CODE_SIGN_STYLE = Automatic;
 			CURRENT_PROJECT_VERSION = 1;
 			GENERATE_INFOPLIST_FILE = NO;
 			INFOPLIST_FILE = ChigurApp/Info.plist;
-			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 			PRODUCT_BUNDLE_IDENTIFIER = "com.example.chigur";
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			SWIFT_VERSION = 5.9;
 			TARGETED_DEVICE_FAMILY = 1;
+			SKIP_INSTALL = NO;
+			SDK = iphoneos;
 		};
 		name = Release;
 	};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-	A10000000000000000000013 /* Build configuration list for PBXNativeTarget "ChigurApp" */ = {
+	1A0000000000000000000015 /* Build configuration list for PBXNativeTarget "ChigurApp" */ = {
 		isa = XCConfigurationList;
 		buildConfigurations = (
-			A10000000000000000000011,
-			A10000000000000000000012,
+			1A0000000000000000000013,
+			1A0000000000000000000014,
 		);
 		defaultConfigurationIsVisible = 0;
 		defaultConfigurationName = Release;
 	};
-	A10000000000000000000014 /* Build configuration list for PBXProject "ChigurApp" */ = {
+	1A0000000000000000000016 /* Build configuration list for PBXProject "ChigurApp" */ = {
 		isa = XCConfigurationList;
 		buildConfigurations = (
-			A10000000000000000000011,
-			A10000000000000000000012,
+			1A0000000000000000000013,
+			1A0000000000000000000014,
 		);
 		defaultConfigurationIsVisible = 0;
 		defaultConfigurationName = Release;
 	};
 /* End XCConfigurationList section */
 	};
-	rootObject = A10000000000000000000010;
+	rootObject = 1A0000000000000000000012;
 }

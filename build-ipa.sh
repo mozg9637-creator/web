@@ -12,8 +12,8 @@ EXPORT_OPTIONS_PLIST="$BUILD_DIR/ExportOptions.plist"
 
 mkdir -p "$BUILD_DIR"
 
-# Создаём ExportOptions.plist без подписи (для тестирования)
-cat > "$EXPORT_OPTIONS_PLIST" <<EOF
+# Создаём ExportOptions.plist для unsigned ad-hoc build
+cat > "$EXPORT_OPTIONS_PLIST" <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -28,12 +28,13 @@ cat > "$EXPORT_OPTIONS_PLIST" <<EOF
 </plist>
 EOF
 
-echo "Building archive..."
+echo "Building archive for iOS..."
 xcodebuild -project "$PROJECT_DIR/ChigurApp.xcodeproj" \
   -scheme "$SCHEME" \
   -configuration "$CONFIGURATION" \
   -archivePath "$ARCHIVE_PATH" \
   -destination 'generic/platform=iOS' \
+  -allowProvisioningUpdates \
   archive
 
 echo "Exporting IPA..."
@@ -42,4 +43,4 @@ xcodebuild -exportArchive \
   -exportPath "$BUILD_DIR" \
   -exportOptionsPlist "$EXPORT_OPTIONS_PLIST"
 
-echo "IPA ready: $IPA_PATH"
+echo "✅ IPA ready: $IPA_PATH"
