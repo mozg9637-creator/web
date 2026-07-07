@@ -5,11 +5,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-    inputs:
-      team_id:
-        description: 'Apple Team ID'
-        required: false
-        type: string
 
 jobs:
   build:
@@ -23,32 +18,15 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Update exportOptions.plist
-        if: "${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
-        run: |
-          TEAM_ID="${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
-          sed -i '' "s/YOUR_TEAM_ID/$TEAM_ID/g" exportOptions.plist
-
-      - name: Build IPA
-        if: "${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}"
+      - name: Build unsigned IPA
         run: |
           chmod +x build-ipa.sh
           ./build-ipa.sh
-        env:
-          APPLE_TEAM_ID: ${{ github.event.inputs.team_id || secrets.APPLE_TEAM_ID }}
 
       - name: Upload IPA as artifact
-        if: success() && hashFiles('build/ChigurApp.ipa') != ''
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: ChigurApp.ipa
           path: build/ChigurApp.ipa
           retention-days: 30
-
-      - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/') && hashFiles('build/ChigurApp.ipa') != ''
-        uses: softprops/action-gh-release@v1
-        with:
-          files: build/ChigurApp.ipa
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
